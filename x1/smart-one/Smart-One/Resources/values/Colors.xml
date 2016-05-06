@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <color name="my_blue">#3498DB</color>
+  <color name="my_green">#77D065</color>
+  <color name="my_purple">#B455B6</color>
+  <color name="my_gray">#738182</color>
+  <color name="my_white">#FFFFFF</color>
+  <color name="my_lime">#CDDC39</color>
+
+  <color name="button_color">#009688</color>
+</resources>
