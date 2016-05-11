@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smart-One", "Smart-One\Smar
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logics", "Logics\Logics.csproj", "{49F21CB8-D54B-4227-B21C-40F92522294D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "activity-designs", "activity-designs\activity-designs.csproj", "{4201793E-19F7-48E8-8673-D980CE2B724A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,12 @@ Global
 		{49F21CB8-D54B-4227-B21C-40F92522294D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{49F21CB8-D54B-4227-B21C-40F92522294D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{49F21CB8-D54B-4227-B21C-40F92522294D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4201793E-19F7-48E8-8673-D980CE2B724A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4201793E-19F7-48E8-8673-D980CE2B724A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4201793E-19F7-48E8-8673-D980CE2B724A}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{4201793E-19F7-48E8-8673-D980CE2B724A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4201793E-19F7-48E8-8673-D980CE2B724A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4201793E-19F7-48E8-8673-D980CE2B724A}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
