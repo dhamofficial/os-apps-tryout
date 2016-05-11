@@ -28,22 +28,24 @@
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:id="@+id/textView1"
+                android:id="@+id/reminderTime"
                 android:gravity="left|center_vertical"
                 android:textSize="15dp"
                 android:fontFamily="sans-serif-condensed"
                 android:layout_gravity="center_horizontal"
-                android:textColor="@android:color/holo_red_dark" />
+                android:textColor="@android:color/holo_red_dark"
+                android:textStyle="bold" />
             <TextView
                 android:text="Friday"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:id="@+id/textView2"
+                android:id="@+id/reminderDay"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="10dp"
                 android:fontFamily="sans-serif-condensed"
                 android:layout_gravity="center_horizontal"
-                android:textColor="@android:color/holo_red_light" />
+                android:textColor="@android:color/holo_red_light"
+                android:textStyle="italic" />
         </LinearLayout>
         <LinearLayout
             android:orientation="vertical"
@@ -59,11 +61,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:fontFamily="sans-serif-condensed"
-                android:id="@+id/title" />
+                android:id="@+id/title"
+                android:textSize="16dp" />
             <TextView
-                android:text="Friday"
+                android:text="Small Description about the task"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:id="@+id/textView2"
+                android:id="@+id/caption"
                 android:textSize="10dp"
                 android:fontFamily="sans-serif-condensed"
                 android:layout_width="wrap_content"

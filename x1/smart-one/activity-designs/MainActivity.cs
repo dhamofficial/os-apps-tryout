@@ -11,7 +11,6 @@ namespace activity_designs
     [Activity(Label = "activity_designs", MainLauncher = true, Icon = "@drawable/icon")]
     public class MainActivity : Activity
     {
-        int count = 1;
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -23,8 +22,24 @@ namespace activity_designs
             // Get our button from the layout resource,
             // and attach an event to it
             var showAllTasks = FindViewById<TextView>(Resource.Id.showAllTasks);
+            var createNewTask = FindViewById<TextView>(Resource.Id.createNewTask);
+            var settings = FindViewById<TextView>(Resource.Id.settings);
 
             showAllTasks.Click += ShowAllTasks_Click;
+            createNewTask.Click += createNewTask_Click;
+            settings.Click += Settings_Click;
+        }
+
+        private void Settings_Click(object sender, EventArgs e)
+        {
+            //var intent = new Intent(this, typeof(Settings));
+            //StartActivity(intent);
+        }
+
+        private void createNewTask_Click(object sender, EventArgs e)
+        {
+            var intent = new Intent(this, typeof(AddTask));
+            StartActivity(intent);
         }
 
         private void ShowAllTasks_Click(object sender, EventArgs e)

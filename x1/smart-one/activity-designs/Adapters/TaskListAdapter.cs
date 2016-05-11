@@ -50,7 +50,19 @@ namespace activity_designs
                 view = context.LayoutInflater.Inflate(Resource.Layout.TaskRow, parent, false);
 
             TaskItem item = this[position];
+            if(item.ReminderTime!=null && item.ReminderTime!=DateTime.MinValue)
+            {
+                view.FindViewById<TextView>(Resource.Id.reminderTime).Text = item.ReminderTime.ToShortTimeString();
+                view.FindViewById<TextView>(Resource.Id.reminderDay).Text = item.ReminderTime.ToShortDateString();
+            }
+            else
+            {
+                view.FindViewById<TextView>(Resource.Id.reminderTime).Text = string.Empty;
+                view.FindViewById<TextView>(Resource.Id.reminderDay).Text = string.Empty;
+            }
+
             view.FindViewById<TextView>(Resource.Id.title).Text = item.Title;
+            view.FindViewById<TextView>(Resource.Id.caption).Text = item.Description;
             //view.FindViewById<TextView>(Resource.Id.Description).Text = item.Description;
 
             //using (var imageView = view.FindViewById<ImageView>(Resource.Id.Thumbnail))

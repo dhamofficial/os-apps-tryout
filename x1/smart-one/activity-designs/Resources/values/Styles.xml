@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+  <!-- Inherit from the light Material Theme -->
+  <style name="MyCustomTheme" parent="android:Theme.Material.Light">
+
+    <!--statusbar color-->
+    <item name="android:statusBarColor">@color/my_white</item>
+    <item name="android:colorPrimaryDark">@color/my_lime</item>
+
+    <!-- Override the app bar color -->
+    <item name="android:colorPrimary">@color/my_lime</item>
+    <!-- Override the color of UI controls -->
+    <item name="android:colorAccent">@color/my_purple</item>
+
+    <item name="android:textColorPrimary">@color/my_white</item>
+
+    <item name="android:colorButtonNormal">@color/button_color</item>
+  </style>
+  
+  <style name="ActivityTitle">
+    <item name="android:layout_width">fill_parent</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:textColor">#006633</item>
+    <item name="android:typeface">monospace</item>
+    <item name="android:background">#f0f0f0</item>
+    <item name="android:textStyle">italic</item>
+    <item name="android:padding">5dp</item>
+  </style>
+</resources>
