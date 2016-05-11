@@ -26,6 +26,8 @@ namespace activity_designs
 		
 		public static void UpdateIdValues()
 		{
+			global::Logics.Resource.String.ApplicationName = global::activity_designs.Resource.String.ApplicationName;
+			global::Logics.Resource.String.Hello = global::activity_designs.Resource.String.Hello;
 		}
 		
 		public partial class Attribute
@@ -75,8 +77,20 @@ namespace activity_designs
 			// aapt resource value: 0x7f050003
 			public const int linearLayout3 = 2131034115;
 			
+			// aapt resource value: 0x7f050004
+			public const int showAllTasks = 2131034116;
+			
+			// aapt resource value: 0x7f050005
+			public const int tasklistview = 2131034117;
+			
 			// aapt resource value: 0x7f050002
 			public const int textView1 = 2131034114;
+			
+			// aapt resource value: 0x7f050006
+			public const int textView2 = 2131034118;
+			
+			// aapt resource value: 0x7f050007
+			public const int title = 2131034119;
 			
 			static Id()
 			{
@@ -92,7 +106,16 @@ namespace activity_designs
 		{
 			
 			// aapt resource value: 0x7f030000
-			public const int Main = 2130903040;
+			public const int AddTask = 2130903040;
+			
+			// aapt resource value: 0x7f030001
+			public const int Main = 2130903041;
+			
+			// aapt resource value: 0x7f030002
+			public const int TaskList = 2130903042;
+			
+			// aapt resource value: 0x7f030003
+			public const int TaskRow = 2130903043;
 			
 			static Layout()
 			{

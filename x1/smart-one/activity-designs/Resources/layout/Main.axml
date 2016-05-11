@@ -113,7 +113,7 @@
                     android:textColorHighlight="@android:color/primary_text_light"
                     android:textStyle="normal"
                     android:singleLine="true"
-                    android:fontFamily="sans-serif"
+                    android:fontFamily="sans-serif-condensed"
                     android:textSize="10dp" />
                 <TextView
                     android:text="12"
@@ -127,7 +127,7 @@
                     android:textStyle="normal"
                     android:singleLine="true"
                     android:textSize="25dp"
-                    android:fontFamily="sans-serif-medium" />
+                    android:fontFamily="sans-serif-condensed" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="vertical"
@@ -148,7 +148,7 @@
                     android:textColorHighlight="@android:color/primary_text_light"
                     android:textStyle="normal"
                     android:singleLine="true"
-                    android:fontFamily="sans-serif"
+                    android:fontFamily="sans-serif-condensed"
                     android:textSize="10dp" />
                 <TextView
                     android:text="4"
@@ -162,7 +162,7 @@
                     android:textStyle="normal"
                     android:singleLine="true"
                     android:textSize="25dp"
-                    android:fontFamily="sans-serif-medium" />
+                    android:fontFamily="sans-serif-condensed" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="vertical"
@@ -182,7 +182,7 @@
                     android:textColorHighlight="@android:color/primary_text_light"
                     android:textStyle="normal"
                     android:singleLine="true"
-                    android:fontFamily="sans-serif"
+                    android:fontFamily="sans-serif-condensed"
                     android:textSize="10dp" />
                 <TextView
                     android:text="4"
@@ -196,7 +196,7 @@
                     android:textStyle="normal"
                     android:singleLine="true"
                     android:textSize="25dp"
-                    android:fontFamily="sans-serif-medium" />
+                    android:fontFamily="sans-serif-condensed" />
             </LinearLayout>
         </LinearLayout>
         <LinearLayout
@@ -329,6 +329,20 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:id="@+id/textView1"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:textColorHighlight="@android:color/primary_text_light"
+                    android:textStyle="normal"
+                    android:singleLine="true"
+                    android:fontFamily="sans-serif-condensed"
+                    android:textSize="20dp"
+                    android:layout_marginBottom="5dp" />
+                <TextView
+                    android:text="show all tasks"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/showAllTasks"
                     android:textAllCaps="false"
                     android:textColor="@android:color/white"
                     android:textColorHighlight="@android:color/primary_text_light"

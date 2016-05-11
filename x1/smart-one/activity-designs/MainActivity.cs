@@ -22,9 +22,15 @@ namespace activity_designs
 
             // Get our button from the layout resource,
             // and attach an event to it
-            //Button button = FindViewById<Button>(Resource.Id.MyButton);
+            var showAllTasks = FindViewById<TextView>(Resource.Id.showAllTasks);
 
-            //button.Click += delegate { button.Text = string.Format("{0} clicks!", count++); };
+            showAllTasks.Click += ShowAllTasks_Click;
+        }
+
+        private void ShowAllTasks_Click(object sender, EventArgs e)
+        {
+            var intent = new Intent(this, typeof(TaskList));
+            StartActivity(intent);
         }
     }
 }
