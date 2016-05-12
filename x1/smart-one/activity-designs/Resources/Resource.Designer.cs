@@ -3002,11 +3002,11 @@ namespace activity_designs
 			// aapt resource value: 0x7f0b003d
 			public const int radio = 2131427389;
 			
-			// aapt resource value: 0x7f0b0078
-			public const int reminderDay = 2131427448;
+			// aapt resource value: 0x7f0b0079
+			public const int reminderDay = 2131427449;
 			
-			// aapt resource value: 0x7f0b0077
-			public const int reminderTime = 2131427447;
+			// aapt resource value: 0x7f0b0078
+			public const int reminderTime = 2131427448;
 			
 			// aapt resource value: 0x7f0b0014
 			public const int screen = 2131427348;
@@ -3099,7 +3099,10 @@ namespace activity_designs
 			public const int tabMode = 2131427339;
 			
 			// aapt resource value: 0x7f0b0076
-			public const int tasklistview = 2131427446;
+			public const int tabs = 2131427446;
+			
+			// aapt resource value: 0x7f0b0077
+			public const int tasklistview = 2131427447;
 			
 			// aapt resource value: 0x7f0b006e
 			public const int text = 2131427438;

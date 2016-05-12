@@ -26,6 +26,9 @@ namespace activity_designs
         private void Init()
         {
 
+
+
+
             var lstTasks = FindViewById<ListView>(Resource.Id.tasklistview);
             lstTasks.ItemClick += OnListItemClick;
 
