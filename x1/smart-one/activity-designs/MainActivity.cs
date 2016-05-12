@@ -32,8 +32,8 @@ namespace activity_designs
 
         private void Settings_Click(object sender, EventArgs e)
         {
-            //var intent = new Intent(this, typeof(Settings));
-            //StartActivity(intent);
+            var intent = new Intent(this, typeof(Settings));
+            StartActivity(intent);
         }
 
         private void createNewTask_Click(object sender, EventArgs e)

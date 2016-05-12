@@ -101,10 +101,10 @@ namespace activity_designs
             {
                 Toast.MakeText(this, "Title cannot be empty", ToastLength.Short).Show();
             }
-            else if (string.IsNullOrEmpty(txtTaskDescription.Text))
-            {
-                Toast.MakeText(this, "Description cannot be empty", ToastLength.Short).Show();
-            }
+            //else if (string.IsNullOrEmpty(txtTaskDescription.Text))
+            //{
+            //    Toast.MakeText(this, "Description cannot be empty", ToastLength.Short).Show();
+            //}
             else
             {
                 TaskItem item = new TaskItem() { Title= txtTaskTitle.Text, Description=txtTaskDescription.Text, Done= chkIsDone.Checked };

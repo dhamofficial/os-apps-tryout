@@ -76,7 +76,7 @@
                     android:textColorHighlight="@android:color/primary_text_light"
                     android:textStyle="normal"
                     android:singleLine="true"
-                    android:textSize="15dp"
+                    android:textSize="20dp"
                     android:fontFamily="sans-serif-thin" />
                 <TextView
                     android:text="May'16"
@@ -224,7 +224,7 @@
                     android:textColorHighlight="@android:color/primary_text_light"
                     android:textStyle="normal"
                     android:singleLine="true"
-                    android:textSize="15dp"
+                    android:textSize="20dp"
                     android:fontFamily="sans-serif-thin" />
             </LinearLayout>
             <LinearLayout
@@ -330,7 +330,7 @@
                     android:id="@+id/linearLayout2"
                     android:layout_marginRight="20dp">
                     <TextView
-                        android:text="create new task"
+                        android:text="&gt; create new task"
                         android:textAppearance="?android:attr/textAppearanceMedium"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
@@ -340,11 +340,11 @@
                         android:textColorHighlight="@android:color/primary_text_light"
                         android:textStyle="normal"
                         android:singleLine="true"
-                        android:fontFamily="sans-serif-condensed"
-                        android:textSize="20dp"
-                        android:layout_marginBottom="5dp" />
+                        android:textSize="18dp"
+                        android:layout_marginBottom="5dp"
+                        android:fontFamily="sans-serif-condensed" />
                     <TextView
-                        android:text="show all tasks"
+                        android:text="&gt; show all tasks"
                         android:textAppearance="?android:attr/textAppearanceMedium"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
@@ -355,7 +355,7 @@
                         android:textStyle="normal"
                         android:singleLine="true"
                         android:fontFamily="sans-serif-condensed"
-                        android:textSize="20dp"
+                        android:textSize="18dp"
                         android:layout_marginBottom="5dp" />
                 </LinearLayout>
             </LinearLayout>

@@ -5,18 +5,83 @@
     android:layout_height="match_parent"
     android:minWidth="25px"
     android:minHeight="25px"
-    android:layout_marginLeft="4dp"
-    android:layout_marginRight="4dp">
-    <com.refractored.PagerSlidingTabStrip
-        android:id="@+id/tabs"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary" />
-    <ListView
-        android:minWidth="25px"
-        android:minHeight="25px"
+    android:background="@drawable/lines_red_background_bright_88568_1152x864">
+    <LinearLayout
+        android:id="@+id/overlay"
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/tasklistview"
-        android:divider="#00000000" />
+        android:background="@color/my_white"
+        android:alpha="0.9">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_marginLeft="7dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginBottom="7dp"
+            android:layout_marginRight="7dp">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_marginLeft="7dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginBottom="7dp"
+                android:layout_marginRight="7dp">
+            <!--left block-->
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minWidth="25px"
+                    android:minHeight="25px"
+                    android:layout_weight="1">
+                    <TextView
+                        android:text="My Tasks"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView1"
+                        android:textAllCaps="false"
+                        android:textColorHighlight="@android:color/primary_text_light"
+                        android:textStyle="normal"
+                        android:singleLine="true"
+                        android:fontFamily="sans-serif-thin"
+                        android:textSize="25dp"
+                        android:layout_marginBottom="0.0dp" />
+                </LinearLayout>
+            <!--right block-->
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minWidth="25px"
+                    android:minHeight="25px"
+                    android:layout_weight="0.1">
+                    <ImageView
+                        style="@style/AddImage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/addTask" />
+                    <ImageView
+                        style="@style/HomeImage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/gotoHome_taskList" />
+                </LinearLayout>
+            </LinearLayout>
+            <ListView
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/tasklistview"
+                android:divider="#00000000" />
+        </LinearLayout>
+    </LinearLayout>
 </LinearLayout>

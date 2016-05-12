@@ -19,15 +19,13 @@ namespace activity_designs
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.TaskList);             
+            SetContentView(Resource.Layout.TaskList);
+
             Init();
         }
-
+         
         private void Init()
         {
-
-
-
 
             var lstTasks = FindViewById<ListView>(Resource.Id.tasklistview);
             lstTasks.ItemClick += OnListItemClick;
@@ -36,6 +34,26 @@ namespace activity_designs
             var listData = repo.GetItems();
 
             lstTasks.Adapter = new TaskListAdapter(this, listData);
+
+
+            var addTask = FindViewById<ImageView>(Resource.Id.addTask);
+            addTask.Click += AddTask_Click;
+
+            var gotoHome_taskList = FindViewById<ImageView>(Resource.Id.gotoHome_taskList);
+            gotoHome_taskList.Click += GotoHome_taskList_Click;
+        }
+
+        private void GotoHome_taskList_Click(object sender, EventArgs e)
+        {
+            var intent = new Intent(this, typeof(MainActivity));
+            StartActivity(intent);
+        }
+
+        private void AddTask_Click(object sender, EventArgs e)
+        {
+            var intent = new Intent(this, typeof(AddTask));
+            Finish();
+            StartActivity(intent);
         }
 
         private void OnListItemClick(object sender, AdapterView.ItemClickEventArgs e)
