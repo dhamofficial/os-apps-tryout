@@ -19,14 +19,13 @@ namespace activity_designs
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.TaskList);
-
-            // Create your application here
+            SetContentView(Resource.Layout.TaskList);             
             Init();
         }
 
         private void Init()
         {
+
             var lstTasks = FindViewById<ListView>(Resource.Id.tasklistview);
             lstTasks.ItemClick += OnListItemClick;
 

@@ -61,8 +61,11 @@ namespace activity_designs
                 view.FindViewById<TextView>(Resource.Id.reminderDay).Text = string.Empty;
             }
 
-            view.FindViewById<TextView>(Resource.Id.title).Text = item.Title;
-            view.FindViewById<TextView>(Resource.Id.caption).Text = item.Description;
+            char[] letters = item.Title.ToCharArray();
+            letters[0] = char.ToUpper(letters[0]);
+
+            view.FindViewById<TextView>(Resource.Id.title).Text = new string(letters);
+            //view.FindViewById<TextView>(Resource.Id.caption).Text = item.Description;
             //view.FindViewById<TextView>(Resource.Id.Description).Text = item.Description;
 
             //using (var imageView = view.FindViewById<ImageView>(Resource.Id.Thumbnail))

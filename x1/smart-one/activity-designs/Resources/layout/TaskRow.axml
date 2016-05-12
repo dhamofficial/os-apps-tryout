@@ -4,7 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:minWidth="25px"
-    android:minHeight="25px">
+    android:minHeight="25px"
+    android:layout_marginTop="4dp"
+    android:layout_marginBottom="4dp">
     <LinearLayout
         android:orientation="horizontal"
         android:minWidth="25px"
@@ -12,17 +14,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/linearLayout1"
-        android:layout_weight="3"
-        android:layout_marginTop="4dp"
-        android:layout_marginBottom="4dp">
+        android:layout_weight="3">
         <LinearLayout
             android:orientation="vertical"
             android:minWidth="25px"
             android:minHeight="25px"
-            android:layout_width="match_parent"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:id="@+id/linearLayout1"
-            android:layout_weight="3">
+            android:layout_weight="3"
+            android:gravity="bottom"
+            android:layout_gravity="bottom">
             <TextView
                 android:text="9.30 AM"
                 android:textAppearance="?android:attr/textAppearanceMedium"
@@ -33,8 +35,8 @@
                 android:textSize="15dp"
                 android:fontFamily="sans-serif-condensed"
                 android:layout_gravity="center_horizontal"
-                android:textColor="@android:color/holo_red_dark"
-                android:textStyle="bold" />
+                android:textColor="@color/my_blue"
+                android:textStyle="normal" />
             <TextView
                 android:text="Friday"
                 android:textAppearance="?android:attr/textAppearanceSmall"
@@ -44,8 +46,7 @@
                 android:textSize="10dp"
                 android:fontFamily="sans-serif-condensed"
                 android:layout_gravity="center_horizontal"
-                android:textColor="@android:color/holo_red_light"
-                android:textStyle="italic" />
+                android:textStyle="normal" />
         </LinearLayout>
         <LinearLayout
             android:orientation="vertical"
@@ -54,24 +55,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/linearLayout1"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:layout_marginLeft="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/roundedcorneritem"
+            android:clipToPadding="false">
             <TextView
                 android:text="Meet Mr.Obama in DC"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:fontFamily="sans-serif-condensed"
                 android:id="@+id/title"
-                android:textSize="16dp" />
-            <TextView
-                android:text="Small Description about the task"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:id="@+id/caption"
-                android:textSize="10dp"
-                android:fontFamily="sans-serif-condensed"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:textColor="@android:color/holo_blue_dark" />
+                style="@style/taskitemStyle"
+                android:fontFamily="Roboto" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>
