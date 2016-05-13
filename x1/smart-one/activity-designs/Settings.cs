@@ -20,7 +20,7 @@ namespace activity_designs
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            //SetContentView(Resource.Layout.Settings);
+            SetContentView(Resource.Layout.Settings);
 
             // Create your application here
             Init();
@@ -51,29 +51,35 @@ namespace activity_designs
 
         private void LoadSettings()
         {
-            var list = repo.GetItems();
-            if(list!=null && list.Count>0)
+            var model = repo.GetItem();
+            if(model!=null)
             {
-                var model = list[0];
-                if(model!=null)
-                {
-                    Firstname.Text = model.Firstname;
-                    Lastname.Text = model.Lastname;
-                    Email.Text = model.Email;
-                    Mobile.Text = model.Mobile;
-                }
+                Firstname.Text = model.Firstname;
+                Lastname.Text = model.Lastname;
+                Email.Text = model.Email;
+                Mobile.Text = model.Mobile;
             }
         }
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
-            var model = new SettingsModel();
-            model.Firstname = Firstname.Text;
-            model.Lastname = Lastname.Text;
-            model.Email = Email.Text;
-            model.Mobile = Mobile.Text;
+            try
+            {
+                var model = new SettingsModel();
+                model.Firstname = Firstname.Text;
+                model.Lastname = Lastname.Text;
+                model.Email = Email.Text;
+                model.Mobile = Mobile.Text;
+
+                repo.SaveItem(model);
+
+                Toast.MakeText(this, "Settings Saved.", ToastLength.Long).Show();
+            }
+            catch (Exception ex)
+            {
+                Toast.MakeText(this, "Sorry. Unable to save. >> "+ex.Message, ToastLength.Long).Show();
+            }
             
-            repo.SaveItem(model);
         }
     }
 }

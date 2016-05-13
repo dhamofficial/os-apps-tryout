@@ -29,6 +29,12 @@ namespace activity_designs
             Init();
         }
 
+        protected override void OnResume()
+        {
+            base.OnResume();
+            FirstLoad();
+        }
+
         TextView thisWeek_taskList;
         TextView thisMonth_taskList;
         TextView upcoming_taskList;
@@ -54,6 +60,11 @@ namespace activity_designs
             thisMonth_taskList.Click += delegate { selectedTab = 2; TabSelection(); };
             upcoming_taskList.Click += delegate { selectedTab = 3; TabSelection(); };
 
+            FirstLoad();
+        }
+
+        private void FirstLoad()
+        {
             selectedTab = 1;
             TabSelection();
         }
@@ -115,7 +126,6 @@ namespace activity_designs
         private void AddTask_Click(object sender, EventArgs e)
         {
             var intent = new Intent(this, typeof(AddTask));
-            Finish();
             StartActivity(intent);
         }
 

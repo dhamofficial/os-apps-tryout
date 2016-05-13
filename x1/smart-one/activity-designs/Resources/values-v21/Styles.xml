@@ -10,9 +10,9 @@
     <!-- Override the app bar color -->
     <item name="android:colorPrimary">@color/my_lime</item>
     <!-- Override the color of UI controls -->
-    <item name="android:colorAccent">@color/my_purple</item>
+    <item name="android:colorAccent">@color/my_blue</item>
 
-    <item name="android:textColorPrimary">@color/my_white</item>
+    <item name="android:textColorPrimary">@color/my_gray</item>
 
     <item name="android:colorButtonNormal">@color/button_color</item>
     <item name="android:buttonStyle">@style/ButtonText</item>

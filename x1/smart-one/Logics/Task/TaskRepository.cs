@@ -63,7 +63,35 @@ namespace Logics.Task
             }
         }
 
-         
+        public Dictionary<string, string> GetTasksDashboardData()
+        {
+            var data = new Dictionary<string, string>();
+
+            int TodaysCount = 0;
+            int PendingCount = 0;
+            int UpcomingCount = 0;
+
+            var todayList = this.GetItems(new TaskFilter { TaskListFilterType=4 });
+            TodaysCount = todayList.Where(o => o.Done == false).Count();
+
+            if (TodaysCount>0)
+                data.Add("Today", TodaysCount.ToString());
+
+            var pendingList = this.GetItems(new TaskFilter { TaskListFilterType = 2 });
+            PendingCount = pendingList.Where(o => o.Done == false).Count();
+
+            if (PendingCount > 0)
+                data.Add("Pending", PendingCount.ToString());
+
+            var upcomingList = this.GetItems(new TaskFilter { TaskListFilterType = 3 });
+            UpcomingCount = upcomingList.Where(o => o.Done == false).Count();
+
+            if (UpcomingCount > 0)
+                data.Add("Upcoming", UpcomingCount.ToString());
+
+
+            return data;
+        }
 
         public List<TaskItem> GetItems(TaskFilter filter=null)
         {
@@ -75,6 +103,7 @@ namespace Logics.Task
                 {
                     if(filter.TaskListFilterType>0)
                     {
+                        //this week
                         if (filter.TaskListFilterType == 1)
                         {
                             DateTime givenDate = DateTime.Today;
@@ -83,6 +112,7 @@ namespace Logics.Task
 
                             list = list.Where(item => (item.ReminderTime>= startOfWeek && item.ReminderTime<=endOfWeek)).ToList();
                         }
+                        //this month
                         else if (filter.TaskListFilterType == 2)
                         {
                             int CurrentYear = DateTime.Today.Year;
@@ -93,6 +123,7 @@ namespace Logics.Task
 
                             list = list.Where(item => (item.ReminderTime >= startDate && item.ReminderTime <= endDate)).ToList();
                         }
+                        //upcoming
                         else if (filter.TaskListFilterType == 3)
                         {
                             int CurrentYear = DateTime.Today.Year;
@@ -102,6 +133,11 @@ namespace Logics.Task
                             DateTime endDate = startDate.AddMonths(1).AddMinutes(-1);
 
                             list = list.Where(item => (item.ReminderTime==null || item.ReminderTime==DateTime.MinValue || item.ReminderTime >= endDate)).ToList();
+                        }
+                        //today
+                        else if (filter.TaskListFilterType == 4)
+                        {
+                            list = list.Where(item => (item.ReminderTime ==DateTime.Today)).ToList();
                         }
                     }
                 }

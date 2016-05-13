@@ -126,20 +126,20 @@ namespace activity_designs
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f070015
-			public const int Email = 2131165205;
+			// aapt resource value: 0x7f070020
+			public const int Email = 2131165216;
 			
-			// aapt resource value: 0x7f070013
-			public const int Firstname = 2131165203;
+			// aapt resource value: 0x7f07001e
+			public const int Firstname = 2131165214;
 			
-			// aapt resource value: 0x7f070014
-			public const int Lastname = 2131165204;
+			// aapt resource value: 0x7f07001f
+			public const int Lastname = 2131165215;
 			
-			// aapt resource value: 0x7f070016
-			public const int Mobile = 2131165206;
+			// aapt resource value: 0x7f070021
+			public const int Mobile = 2131165217;
 			
-			// aapt resource value: 0x7f070019
-			public const int addTask = 2131165209;
+			// aapt resource value: 0x7f070024
+			public const int addTask = 2131165220;
 			
 			// aapt resource value: 0x7f07000b
 			public const int btnSave = 2131165195;
@@ -150,11 +150,20 @@ namespace activity_designs
 			// aapt resource value: 0x7f070004
 			public const int chkRemindeMe = 2131165188;
 			
-			// aapt resource value: 0x7f070010
-			public const int createNewTask = 2131165200;
+			// aapt resource value: 0x7f07001b
+			public const int createNewTask = 2131165211;
 			
-			// aapt resource value: 0x7f07001a
-			public const int gotoHome_taskList = 2131165210;
+			// aapt resource value: 0x7f070012
+			public const int divStat1 = 2131165202;
+			
+			// aapt resource value: 0x7f070015
+			public const int divStat2 = 2131165205;
+			
+			// aapt resource value: 0x7f070018
+			public const int divStat3 = 2131165208;
+			
+			// aapt resource value: 0x7f070025
+			public const int gotoHome_taskList = 2131165221;
 			
 			// aapt resource value: 0x7f070008
 			public const int imgDatePicker = 2131165192;
@@ -171,47 +180,71 @@ namespace activity_designs
 			// aapt resource value: 0x7f07000c
 			public const int linearLayout2 = 2131165196;
 			
-			// aapt resource value: 0x7f07000e
-			public const int linearLayout3 = 2131165198;
+			// aapt resource value: 0x7f07000f
+			public const int linearLayout3 = 2131165199;
 			
-			// aapt resource value: 0x7f070018
-			public const int monthName_TaskList = 2131165208;
+			// aapt resource value: 0x7f070023
+			public const int monthName_TaskList = 2131165219;
 			
-			// aapt resource value: 0x7f07001f
-			public const int noTasks_TaskList = 2131165215;
+			// aapt resource value: 0x7f07002a
+			public const int noTasks_TaskList = 2131165226;
 			
-			// aapt resource value: 0x7f070017
-			public const int overlay = 2131165207;
+			// aapt resource value: 0x7f070022
+			public const int overlay = 2131165218;
 			
-			// aapt resource value: 0x7f070021
-			public const int reminderDay = 2131165217;
+			// aapt resource value: 0x7f07002c
+			public const int reminderDay = 2131165228;
 			
-			// aapt resource value: 0x7f070020
-			public const int reminderTime = 2131165216;
+			// aapt resource value: 0x7f07002b
+			public const int reminderTime = 2131165227;
 			
 			// aapt resource value: 0x7f070000
 			public const int scrollView1 = 2131165184;
 			
-			// aapt resource value: 0x7f070012
-			public const int settings = 2131165202;
-			
-			// aapt resource value: 0x7f070011
-			public const int showAllTasks = 2131165201;
-			
-			// aapt resource value: 0x7f07001e
-			public const int tasklistview = 2131165214;
-			
-			// aapt resource value: 0x7f07000d
-			public const int textView1 = 2131165197;
+			// aapt resource value: 0x7f07001d
+			public const int settings = 2131165213;
 			
 			// aapt resource value: 0x7f07001c
-			public const int thisMonth_taskList = 2131165212;
+			public const int showAllTasks = 2131165212;
 			
-			// aapt resource value: 0x7f07001b
-			public const int thisWeek_taskList = 2131165211;
+			// aapt resource value: 0x7f070013
+			public const int stat1Key = 2131165203;
 			
-			// aapt resource value: 0x7f070022
-			public const int title = 2131165218;
+			// aapt resource value: 0x7f070014
+			public const int stat1Val = 2131165204;
+			
+			// aapt resource value: 0x7f070016
+			public const int stat2Key = 2131165206;
+			
+			// aapt resource value: 0x7f070017
+			public const int stat2Val = 2131165207;
+			
+			// aapt resource value: 0x7f070019
+			public const int stat3Key = 2131165209;
+			
+			// aapt resource value: 0x7f07001a
+			public const int stat3Val = 2131165210;
+			
+			// aapt resource value: 0x7f070029
+			public const int tasklistview = 2131165225;
+			
+			// aapt resource value: 0x7f070010
+			public const int textView1 = 2131165200;
+			
+			// aapt resource value: 0x7f070027
+			public const int thisMonth_taskList = 2131165223;
+			
+			// aapt resource value: 0x7f070026
+			public const int thisWeek_taskList = 2131165222;
+			
+			// aapt resource value: 0x7f07002d
+			public const int title = 2131165229;
+			
+			// aapt resource value: 0x7f07000d
+			public const int txtFirstname_MainActivity = 2131165197;
+			
+			// aapt resource value: 0x7f07000e
+			public const int txtLastname_MainActivity = 2131165198;
 			
 			// aapt resource value: 0x7f070007
 			public const int txtReminderDate = 2131165191;
@@ -225,11 +258,11 @@ namespace activity_designs
 			// aapt resource value: 0x7f070001
 			public const int txtTaskTitle = 2131165185;
 			
-			// aapt resource value: 0x7f07000f
-			public const int txtToday_MainActivity = 2131165199;
+			// aapt resource value: 0x7f070011
+			public const int txtToday_MainActivity = 2131165201;
 			
-			// aapt resource value: 0x7f07001d
-			public const int upcoming_taskList = 2131165213;
+			// aapt resource value: 0x7f070028
+			public const int upcoming_taskList = 2131165224;
 			
 			static Id()
 			{

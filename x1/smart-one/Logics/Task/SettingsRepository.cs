@@ -63,7 +63,10 @@ namespace Logics.Task
             }
         }
 
-         
+        public SettingsModel GetItem()
+        {
+            return this.GetItems().FirstOrDefault();
+        }
 
         public List<SettingsModel> GetItems()
         {
