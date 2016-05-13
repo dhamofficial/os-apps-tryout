@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <resources>
   <!-- Inherit from the light Material Theme -->
-  <style name="MyCustomTheme" parent="android:Theme.Material.Light">
+  <style name="MyCustomTheme" parent="android:Theme.Material.Light.NoActionBar">
     
     <!--statusbar color-->
     <item name="android:statusBarColor">@color/my_white</item>
@@ -15,6 +15,15 @@
     <item name="android:textColorPrimary">@color/my_white</item>
 
     <item name="android:colorButtonNormal">@color/button_color</item>
+    <item name="android:buttonStyle">@style/ButtonText</item>
+  </style>
+
+
+  <style name="ButtonText" parent="@android:style/Widget.Button">
+    <item name="android:textColor">@color/my_gray</item>
+    <!-- only way to change this is to change the src image -->
+    <item name="android:layout_width">80.0px</item>
+    <item name="android:layout_height">40.0px</item>
   </style>
 
   <style name="ActivityTitle">
@@ -26,4 +35,16 @@
     <item name="android:textStyle">italic</item>
     <item name="android:padding">5dp</item>
   </style>
+
+  <style name="GridLayoutTitleItem">
+    <item name="android:textColor">@color/my_white</item>
+    <item name="android:textSize">16dp</item>
+    <item name="android:layout_gravity">fill</item>
+    <item name="android:layout_columnWeight">1</item>
+    <item name="android:layout_rowWeight">1</item>
+    <item name="android:fontFamily">sans-serif-condensed</item>
+    <item name="android:layout_gravity">center_horizontal</item>
+    <item name="android:padding">10dp</item>
+  </style>
+ 
 </resources>

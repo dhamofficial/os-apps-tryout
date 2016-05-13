@@ -65,11 +65,48 @@ namespace Logics.Task
 
          
 
-        public List<TaskItem> GetItems()
+        public List<TaskItem> GetItems(TaskFilter filter=null)
         {
             lock (locker)
             {
-                return (from i in database.Table<TaskItem>() select i).ToList();
+                var list = (from i in database.Table<TaskItem>() select i).ToList();
+
+                if(filter!=null)
+                {
+                    if(filter.TaskListFilterType>0)
+                    {
+                        if (filter.TaskListFilterType == 1)
+                        {
+                            DateTime givenDate = DateTime.Today;
+                            DateTime startOfWeek = givenDate.AddDays(-(int) givenDate.DayOfWeek);
+                            DateTime endOfWeek = startOfWeek.AddDays(7);
+
+                            list = list.Where(item => (item.ReminderTime>= startOfWeek && item.ReminderTime<=endOfWeek)).ToList();
+                        }
+                        else if (filter.TaskListFilterType == 2)
+                        {
+                            int CurrentYear = DateTime.Today.Year;
+                            int CurrentMonth = DateTime.Today.Month;
+
+                            DateTime startDate = new DateTime(CurrentYear, CurrentMonth, 1);
+                            DateTime endDate = startDate.AddMonths(1).AddMinutes(-1);
+
+                            list = list.Where(item => (item.ReminderTime >= startDate && item.ReminderTime <= endDate)).ToList();
+                        }
+                        else if (filter.TaskListFilterType == 3)
+                        {
+                            int CurrentYear = DateTime.Today.Year;
+                            int CurrentMonth = DateTime.Today.Month;
+
+                            DateTime startDate = new DateTime(CurrentYear, CurrentMonth, 1);
+                            DateTime endDate = startDate.AddMonths(1).AddMinutes(-1);
+
+                            list = list.Where(item => (item.ReminderTime==null || item.ReminderTime==DateTime.MinValue || item.ReminderTime >= endDate)).ToList();
+                        }
+                    }
+                }
+
+                return list;
             }
         }
 
@@ -93,6 +130,11 @@ namespace Logics.Task
         {
             lock (locker)
             {
+                if(item.ReminderTime==null || item.ReminderTime==DateTime.MinValue)
+                {
+                    item.ReminderTime = DateTime.Today;//.AddDays(1).AddHours(9);
+                }
+
                 if (item.ID != 0)
                 {
                     database.Update(item);

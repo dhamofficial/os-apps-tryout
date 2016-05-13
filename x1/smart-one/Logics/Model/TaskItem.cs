@@ -29,4 +29,14 @@ namespace Logics.Model
 
         public DateTime ReminderTime { get; set; }
     }
+
+    public class TaskFilter
+    {
+        /// <summary>
+        /// 1 - This week
+        /// 2 - This month
+        /// 3 - Upcoming
+        /// </summary>
+        public int TaskListFilterType { get; set; }
+    }
 }

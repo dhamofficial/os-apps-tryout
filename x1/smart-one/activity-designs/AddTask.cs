@@ -109,12 +109,21 @@ namespace activity_designs
             {
                 TaskItem item = new TaskItem() { Title= txtTaskTitle.Text, Description=txtTaskDescription.Text, Done= chkIsDone.Checked };
 
-                if(!string.IsNullOrEmpty(txtReminderTime.Text))
-                    item.ReminderTime = Convert.ToDateTime(txtReminderTime.Text);
+                DateTime dateOnly = DateTime.Today;
+                DateTime timeOnly = DateTime.Now.AddHours(1);
 
-                TaskRepository task = new TaskRepository();
+                if (!string.IsNullOrEmpty(txtReminderDate.Text))
+                    dateOnly = Convert.ToDateTime(txtReminderDate.Text);
+
+                if (!string.IsNullOrEmpty(txtReminderTime.Text))
+                    timeOnly = Convert.ToDateTime(txtReminderTime.Text);
+                
+                item.ReminderTime = dateOnly.Add(timeOnly.TimeOfDay);
+
+                var task = new TaskRepository();
                 task.SaveItem(item);
                 Clear();
+
                 Toast.MakeText(this, "Task Added!!!", ToastLength.Long).Show();
             }
         }

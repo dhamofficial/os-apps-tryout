@@ -5,6 +5,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using activity_designs.Helpers;
 
 namespace activity_designs
 {
@@ -19,8 +20,11 @@ namespace activity_designs
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
 
-            // Get our button from the layout resource,
-            // and attach an event to it
+            Init();
+        }
+
+        private void Init()
+        {
             var showAllTasks = FindViewById<TextView>(Resource.Id.showAllTasks);
             var createNewTask = FindViewById<TextView>(Resource.Id.createNewTask);
             var settings = FindViewById<TextView>(Resource.Id.settings);
@@ -28,6 +32,9 @@ namespace activity_designs
             showAllTasks.Click += ShowAllTasks_Click;
             createNewTask.Click += createNewTask_Click;
             settings.Click += Settings_Click;
+
+            var txtToday_MainActivity= FindViewById<TextView>(Resource.Id.txtToday_MainActivity);
+            txtToday_MainActivity.Text = DateTime.Today.FormatToString();
         }
 
         private void Settings_Click(object sender, EventArgs e)
