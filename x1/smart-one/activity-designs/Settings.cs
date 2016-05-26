@@ -32,6 +32,7 @@ namespace activity_designs
         EditText Mobile;
 
         SettingsRepository repo;
+        SettingsModel model;
 
         private void Init()
         {
@@ -51,7 +52,7 @@ namespace activity_designs
 
         private void LoadSettings()
         {
-            var model = repo.GetItem();
+            model = repo.GetItem(1);
             if(model!=null)
             {
                 Firstname.Text = model.Firstname;
@@ -65,12 +66,14 @@ namespace activity_designs
         {
             try
             {
-                var model = new SettingsModel();
+                if(model==null)
+                    model = new SettingsModel();
+
                 model.Firstname = Firstname.Text;
                 model.Lastname = Lastname.Text;
                 model.Email = Email.Text;
                 model.Mobile = Mobile.Text;
-
+                //model.ID = 1;
                 repo.SaveItem(model);
 
                 Toast.MakeText(this, "Settings Saved.", ToastLength.Long).Show();

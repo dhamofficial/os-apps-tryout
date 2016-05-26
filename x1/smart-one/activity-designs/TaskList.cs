@@ -131,7 +131,8 @@ namespace activity_designs
 
         private void OnListItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
-            throw new NotImplementedException();
+            Toast.MakeText(this, "i am doing it.", ToastLength.Long);
+            //throw new NotImplementedException();
         }
     }
 }

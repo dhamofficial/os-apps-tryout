@@ -110,7 +110,7 @@ namespace Logics.Task
                             DateTime startOfWeek = givenDate.AddDays(-(int) givenDate.DayOfWeek);
                             DateTime endOfWeek = startOfWeek.AddDays(7);
 
-                            list = list.Where(item => (item.ReminderTime>= startOfWeek && item.ReminderTime<=endOfWeek)).ToList();
+                            list = list.Where(item => (item.ReminderTime.Date >= startOfWeek.Date && item.ReminderTime.Date <= endOfWeek.Date)).ToList();
                         }
                         //this month
                         else if (filter.TaskListFilterType == 2)
@@ -121,7 +121,7 @@ namespace Logics.Task
                             DateTime startDate = new DateTime(CurrentYear, CurrentMonth, 1);
                             DateTime endDate = startDate.AddMonths(1).AddMinutes(-1);
 
-                            list = list.Where(item => (item.ReminderTime >= startDate && item.ReminderTime <= endDate)).ToList();
+                            list = list.Where(item => (item.ReminderTime.Date >= startDate.Date && item.ReminderTime.Date <= endDate.Date )).ToList();
                         }
                         //upcoming
                         else if (filter.TaskListFilterType == 3)
@@ -132,12 +132,12 @@ namespace Logics.Task
                             DateTime startDate = new DateTime(CurrentYear, CurrentMonth, 1);
                             DateTime endDate = startDate.AddMonths(1).AddMinutes(-1);
 
-                            list = list.Where(item => (item.ReminderTime==null || item.ReminderTime==DateTime.MinValue || item.ReminderTime >= endDate)).ToList();
+                            list = list.Where(item => (item.ReminderTime==null || item.ReminderTime==DateTime.MinValue || item.ReminderTime.Date>= endDate.Date)).ToList();
                         }
                         //today
                         else if (filter.TaskListFilterType == 4)
                         {
-                            list = list.Where(item => (item.ReminderTime ==DateTime.Today)).ToList();
+                            list = list.Where(item => (item.ReminderTime.Date.Equals( DateTime.Today.Date) )).ToList();
                         }
                     }
                 }

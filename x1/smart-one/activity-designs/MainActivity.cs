@@ -13,7 +13,9 @@ using System.Collections.Generic;
 
 namespace activity_designs
 {
-    [Activity(Label = "activity_designs", MainLauncher = true, Icon = "@drawable/icon")]
+    //[Activity(Label = "activity_designs", MainLauncher = true, Icon = "@drawable/icon")]
+    [Activity(Label = "SimpleOne - Smart Launcher", MainLauncher = true)]
+    [IntentFilter(new[] { Intent.ActionMain }, Categories = new[] { Intent.CategoryHome, Intent.CategoryDefault })]
     public class MainActivity : Activity
     {
         TextView txtFirstname_MainActivity;
@@ -118,7 +120,7 @@ namespace activity_designs
 
         private void Settings_Click(object sender, EventArgs e)
         {
-            var intent = new Intent(this, typeof(Settings));            
+            var intent = new Intent(this, typeof(Settings));
             StartActivity(intent);
         }
 
