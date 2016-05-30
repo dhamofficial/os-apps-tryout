@@ -9,6 +9,8 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Java.Lang;
+using SQLite;
 
 namespace Logics.Model
 {
@@ -18,7 +20,7 @@ namespace Logics.Model
         {
         }
 
-        //[PrimaryKey, AutoIncrement]
+        [PrimaryKey, AutoIncrement]
         public int ID { get; set; }
 
         public string Title { get; set; }
@@ -28,6 +30,7 @@ namespace Logics.Model
         public bool Done { get; set; }
 
         public DateTime ReminderTime { get; set; }
+       
     }
 
     public class TaskFilter

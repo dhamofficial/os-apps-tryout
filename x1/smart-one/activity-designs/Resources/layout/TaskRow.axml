@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:minWidth="25px"
     android:minHeight="25px"
-    android:layout_marginTop="4dp"
+    android:layout_marginTop="6dp"
     android:layout_marginBottom="4dp">
     <LinearLayout
         android:orientation="horizontal"
@@ -15,6 +15,16 @@
         android:layout_height="wrap_content"
         android:id="@+id/linearLayout1"
         android:layout_weight="3">
+        <LinearLayout
+            android:orientation="vertical"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="7dp"
+            android:layout_height="fill_parent"
+            android:id="@+id/linearLeftBorder_TaskCompleted"
+            android:gravity="center_vertical"
+            android:background="#8BC34A"
+            android:layout_gravity="center_vertical" />
         <LinearLayout
             android:orientation="vertical"
             android:minWidth="25px"

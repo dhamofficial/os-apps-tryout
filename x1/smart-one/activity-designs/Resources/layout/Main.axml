@@ -209,7 +209,7 @@
                         android:fontFamily="sans-serif-condensed" />
                 </LinearLayout>
             </LinearLayout>
-            <LinearLayout
+        <!--<LinearLayout
                 android:orientation="horizontal"
                 android:minWidth="25px"
                 android:minHeight="25px"
@@ -317,7 +317,7 @@
                         android:textSize="20dp"
                         android:layout_marginBottom="5dp" />
                 </LinearLayout>
-            </LinearLayout>
+            </LinearLayout>-->
             <LinearLayout
                 android:orientation="horizontal"
                 android:minWidth="25px"

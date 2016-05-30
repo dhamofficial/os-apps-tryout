@@ -35,6 +35,7 @@ namespace activity_designs
         {   
             base.OnResume();
             LoadSettings();
+            LoadTasksBlock();
         }
 
         private void Init()
@@ -74,12 +75,31 @@ namespace activity_designs
                 controls.Add(FindViewById<TextView>(Resource.Id.stat3Val));
                 //controls.Add(FindViewById<LinearLayout>(Resource.Id.divStat3));
 
+                FindViewById<LinearLayout>(Resource.Id.divStat1).Visibility = ViewStates.Gone;
+                FindViewById<LinearLayout>(Resource.Id.divStat2).Visibility = ViewStates.Gone;
+                FindViewById<LinearLayout>(Resource.Id.divStat3).Visibility = ViewStates.Gone;
+
                 int index = 0;
                 foreach (var item in data)
                 {
-                    controls[index].Text = item.Key;
-                    controls[index+1].Text = item.Value;
-                    controls[index + 2].Visibility = ViewStates.Visible;
+                    if (index == 0)
+                    {
+                        controls[0].Text = item.Key;
+                        controls[1].Text = item.Value;
+                        FindViewById<LinearLayout>(Resource.Id.divStat1).Visibility = ViewStates.Visible;
+                    }
+                    else if (index == 1)
+                    {
+                        controls[2].Text = item.Key;
+                        controls[3].Text = item.Value;
+                        FindViewById<LinearLayout>(Resource.Id.divStat2).Visibility = ViewStates.Visible;
+                    }
+                    else if (index == 2)
+                    {
+                        controls[4].Text = item.Key;
+                        controls[5].Text = item.Value;
+                        FindViewById<LinearLayout>(Resource.Id.divStat3).Visibility = ViewStates.Visible;
+                    }
                     index++;
                 }
 

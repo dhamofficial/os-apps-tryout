@@ -48,6 +48,18 @@ namespace activity_designs
             repo = new SettingsRepository();
 
             LoadSettings();
+
+
+            var btnGetLocation = FindViewById<Button>(Resource.Id.btnGetLocation);
+            btnGetLocation.Click += BtnGetLocation_Click;
+        }
+
+        private void BtnGetLocation_Click(object sender, EventArgs e)
+        {
+            //var geoUri = Android.Net.Uri.Parse("geo:42.374260,-71.120824");
+            //var mapIntent = new Intent(Intent.ActionView, geoUri);
+            //StartActivity(mapIntent);
+            StartActivity(typeof(LocationActivity));
         }
 
         private void LoadSettings()

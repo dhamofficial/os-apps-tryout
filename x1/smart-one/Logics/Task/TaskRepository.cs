@@ -74,14 +74,11 @@ namespace Logics.Task
             var todayList = this.GetItems(new TaskFilter { TaskListFilterType=4 });
             TodaysCount = todayList.Where(o => o.Done == false).Count();
 
-            if (TodaysCount>0)
+
+            if (TodaysCount > 0)
+            {
                 data.Add("Today", TodaysCount.ToString());
-
-            var pendingList = this.GetItems(new TaskFilter { TaskListFilterType = 2 });
-            PendingCount = pendingList.Where(o => o.Done == false).Count();
-
-            if (PendingCount > 0)
-                data.Add("Pending", PendingCount.ToString());
+            }
 
             var upcomingList = this.GetItems(new TaskFilter { TaskListFilterType = 3 });
             UpcomingCount = upcomingList.Where(o => o.Done == false).Count();

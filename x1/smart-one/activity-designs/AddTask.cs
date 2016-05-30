@@ -18,6 +18,7 @@ namespace activity_designs
     [Activity(Label = "Add Task")]
     public class AddTask : Activity
     {
+        int selectedTaskId = 0;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -36,14 +37,28 @@ namespace activity_designs
         EditText txtTaskDescription;
         EditText txtReminderDate;
 
-        private void Init()
+        void InitFields()
         {
-            var btnSave = FindViewById<Button>(Resource.Id.btnSave);
+            txtTaskTitle = FindViewById<EditText>(Resource.Id.txtTaskTitle);
+            txtTaskDescription = FindViewById<EditText>(Resource.Id.txtTaskDescription);
+
             layoutReminderTime = FindViewById<LinearLayout>(Resource.Id.layoutReminderTime);
             chkRemindeMe = FindViewById<CheckBox>(Resource.Id.chkRemindeMe);
             chkIsDone = FindViewById<CheckBox>(Resource.Id.chkIsDone);
             txtReminderDate = FindViewById<EditText>(Resource.Id.txtReminderDate);
+            txtReminderTime = FindViewById<EditText>(Resource.Id.txtReminderTime);
+        }
+
+        private void Init()
+        {
+
+            InitFields();
+
+            selectedTaskId = Intent.GetIntExtra("selectedTaskId", 0);
+
+            var btnSave = FindViewById<Button>(Resource.Id.btnSave);
             var imgDatePicker = FindViewById<ImageView>(Resource.Id.imgDatePicker);
+            var imgTimePicker = FindViewById<ImageView>(Resource.Id.imgTimePicker);
 
             btnSave.Click += Button_Click;
             ReminderVisibility(false);
@@ -58,9 +73,6 @@ namespace activity_designs
                 frag.Show(FragmentManager, DatePickerFragment.TAG);
             };
 
-            txtReminderTime = FindViewById<EditText>(Resource.Id.txtReminderTime);
-            var imgTimePicker = FindViewById<ImageView>(Resource.Id.imgTimePicker);
-
             imgTimePicker.Click += delegate
             {
                 TimePickerFragment frag = TimePickerFragment.NewInstance(delegate (DateTime time)
@@ -70,6 +82,29 @@ namespace activity_designs
                 frag.Show(FragmentManager, TimePickerFragment.TAG);
             };
 
+            if(selectedTaskId>0)
+            {
+                LoadData();
+            }
+        }
+
+        void LoadData()
+        {
+            if(selectedTaskId>0)
+            {
+                var task = new TaskRepository();
+                var model = task.GetItem(selectedTaskId);
+
+                txtTaskTitle.Text = model.Title;
+                txtTaskDescription.Text = model.Description;
+
+                if (model.ReminderTime != DateTime.MinValue)
+                {
+                    txtReminderDate.Text = model.ReminderTime.ToShortDateString();
+                    txtReminderTime.Text = model.ReminderTime.ToShortTimeString();
+                    chkRemindeMe.Checked = true;
+                }
+            }
         }
 
         private void ChkRemindeMe_CheckedChange(object sender, CompoundButton.CheckedChangeEventArgs e)
@@ -94,20 +129,18 @@ namespace activity_designs
 
         private void Button_Click(object sender, EventArgs e)
         {
-            txtTaskTitle = FindViewById<EditText>(Resource.Id.txtTaskTitle);
-            txtTaskDescription = FindViewById<EditText>(Resource.Id.txtTaskDescription);
+            Save();
+        }
 
-            if(string.IsNullOrEmpty( txtTaskTitle.Text))
+        void Save()
+        {
+            if (string.IsNullOrEmpty(txtTaskTitle.Text))
             {
                 Toast.MakeText(this, "Title cannot be empty", ToastLength.Short).Show();
-            }
-            //else if (string.IsNullOrEmpty(txtTaskDescription.Text))
-            //{
-            //    Toast.MakeText(this, "Description cannot be empty", ToastLength.Short).Show();
-            //}
+            }            
             else
             {
-                TaskItem item = new TaskItem() { Title= txtTaskTitle.Text, Description=txtTaskDescription.Text, Done= chkIsDone.Checked };
+                TaskItem item = new TaskItem() { ID=selectedTaskId, Title = txtTaskTitle.Text, Description = txtTaskDescription.Text, Done = chkIsDone.Checked };
 
                 DateTime dateOnly = DateTime.Today;
                 DateTime timeOnly = DateTime.Now.AddHours(1);
@@ -117,14 +150,14 @@ namespace activity_designs
 
                 if (!string.IsNullOrEmpty(txtReminderTime.Text))
                     timeOnly = Convert.ToDateTime(txtReminderTime.Text);
-                
+
                 item.ReminderTime = dateOnly.Add(timeOnly.TimeOfDay);
 
                 var task = new TaskRepository();
                 task.SaveItem(item);
                 Clear();
 
-                Toast.MakeText(this, "Task Added!!!", ToastLength.Long).Show();
+                Toast.MakeText(this, "Task Saved!!!", ToastLength.Long).Show();
             }
         }
 
@@ -132,6 +165,9 @@ namespace activity_designs
         {
             txtTaskTitle.Text = string.Empty;
             txtTaskDescription.Text = string.Empty;
+            chkRemindeMe.Checked = false;
+            txtReminderDate.Text = string.Empty;
+            txtReminderTime.Text = string.Empty;
         }
     }
 }

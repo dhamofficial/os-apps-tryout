@@ -17,6 +17,7 @@ namespace activity_designs
     {
         Activity context;
         List<TaskItem> list;
+        LinearLayout linearLeftBorder_TaskCompleted;
 
         public TaskListAdapter(Activity _context, List<TaskItem> _list)
             : base()
@@ -65,6 +66,14 @@ namespace activity_designs
             letters[0] = char.ToUpper(letters[0]);
 
             view.FindViewById<TextView>(Resource.Id.title).Text = new string(letters);
+
+            linearLeftBorder_TaskCompleted = view.FindViewById<LinearLayout>(Resource.Id.linearLeftBorder_TaskCompleted);
+
+            if (item.Done)
+                linearLeftBorder_TaskCompleted.Visibility = ViewStates.Visible;
+            else
+                linearLeftBorder_TaskCompleted.Visibility = ViewStates.Gone;
+
             //view.FindViewById<TextView>(Resource.Id.caption).Text = item.Description;
             //view.FindViewById<TextView>(Resource.Id.Description).Text = item.Description;
 
@@ -73,7 +82,7 @@ namespace activity_designs
             //    //string url = Android.Text.Html.FromHtml(item.thumbnail).ToString();
 
             //    //Download and display image
-               
+
             //}
             return view;
         }
